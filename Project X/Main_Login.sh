@@ -16,9 +16,6 @@ passwd_solicitude() {
       echo ;
     read -p "NEW PASSWD > " passwdnew
     echo ;
-        cd ~
-        cd 'Project X'
-        cd .pwned
        echo '{"contraseña": "'"$passwdnew"'"}' > "$allocated_passwd"
        chmod 600 "$allocated_passwd"
 }
@@ -45,9 +42,7 @@ autenticar() {
     echo ;
     read -sp "Introduce tu contraseña: " passwd
     echo ""
-    cd ~
-    cd 'Project X'
-    cd .pwned
+
     if [ -f "$allocated_passwd" ]; then
         cat "$allocated_passwd" | grep -q "\"contraseña\": \"$passwd\""
         if [ $? -eq 0 ]; then

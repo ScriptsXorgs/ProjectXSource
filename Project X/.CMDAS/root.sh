@@ -56,9 +56,21 @@ PS1="ROOT@SYS > "
                kill $! > /dev/null 2>&1
                exit
                 ;;
-            /"IP")
+
+            "!ip")
+
+            ifconfig
+
+                ;;
+            "!ip6")
+
+            ifconfig | grep -w inet6 | awk '{print $2}'
+
+                ;;
+            "!ip4")
                 
-               ifconfig
+               ifconfig | grep -w inet | grep -v inet6 | awk '{print $2}'
+
                 ;;
             "!dds")
                cd ~
@@ -120,6 +132,10 @@ PS1="ROOT@SYS > "
                    Python Generator-Tool.py
                  cd ..
 
+                ;;
+            "unsu")
+                cd /.CMDAS
+                  bash main.sh
                 ;;
             "Pxec UNV")
                   cd ./.Tools

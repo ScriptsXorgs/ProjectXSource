@@ -7,7 +7,15 @@ echo "Type 'programs' to view programs, 'help' to view basic"
 echo "Type SQL.HELP to new commands in the terminal"
 echo
 
+# Variables de entorno
+
+space='echo " "'
+
+
+
+
 # Configuraciones Bind ( DETECCION DE TECLAS )
+
 
 
 
@@ -55,9 +63,16 @@ PS1="NotROOT@SYS > "
                echo "GoodBye..";sleep 0.5 && exit 1
                kill $! > /dev/null 2>&1
                exit
+
                 ;;
-            /"IP")
-                 ifconfig
+
+            "!ip6")
+
+            ifconfig | grep -w inet6 | awk '{print $2}'
+
+                ;;
+            "!ip4")
+                 ifconfig | grep -w inet | grep -v inet6 | awk '{print $2}'
                 ;;
             "upgrade -all")
                 echo ;echo "Actualizando."
@@ -70,8 +85,6 @@ PS1="NotROOT@SYS > "
                    cd ~
                   cd 'Project X'
                 cd ./.CMDAS  
-                ;;
-            ""
                 ;;
             "help")
                echo "Type ABOUT from credits."
@@ -229,8 +242,10 @@ rm temp.html
                   bash editor.sh filename
                 ;;
             "programs")
-              echo "edit -h" "| edit -f" "| /IP" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN)"| column -t
-              echo "help-program <program_name> to help"     
+            $space
+              echo "edit -h" "| edit -f" "| /IP" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN) |" column -t
+              echo "help-program <program_name> to help"   
+            $space  
                 ;;
             "help-program /IP")
               echo ;echo "Show your IPv4 and IPv6";echo    
@@ -245,6 +260,11 @@ rm temp.html
               cd ~
               cd 'Project X'
               cd ./.CMDAS
+                ;;
+            "!tls")
+                   
+                 echo "/Tools not found, are you rooted?."   
+                 echo 
                 ;;
             "help-program SQL")
                    cd HELPER-WEB
