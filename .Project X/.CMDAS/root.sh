@@ -132,6 +132,11 @@ PS1="ROOT@SYS > "
               echo ;
 
                 ;;
+            "ipconfig")
+
+            ifconfig
+
+                ;;    
             "/Tools PWG")
             cd ~
               cd '.Project X'
@@ -161,7 +166,7 @@ PS1="ROOT@SYS > "
             "SQL.HELP")
                cd HELPER-WEB
                  cd MySqL
-                   start sql-help.html
+                   open sql-help.html
                  cd ..
                cd ..
                 ;;
@@ -275,7 +280,7 @@ rm temp.html
               cd '.Project X'
                cd ./.CMDAS
               cd HELPER-WEB
-                start getlink.html
+                open getlink.html
               cd ..
               cd ~
               cd '.Project X'
@@ -287,7 +292,7 @@ rm temp.html
                 cd ./.CMDAS
                    cd HELPER-WEB
                  cd MySqL
-                   start sql-help.html
+                   open sql-help.html
                  cd ..
                cd ..
                 ;;
@@ -309,7 +314,7 @@ rm temp.html
               cd ./.CMDAS
                 cd HELPER-WEB
                   cd HELPER
-                    start nmap-help.html
+                    open nmap-help.html
                   cd ..
                 cd ..     
                 cd ~

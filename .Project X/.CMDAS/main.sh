@@ -255,7 +255,7 @@ rm temp.html
                 ;;
             "help-program GETLINK")
               cd HELPER-WEB
-                start getlink.html
+                open getlink.html
               cd ..
               cd ~
               cd '.Project X'
@@ -269,14 +269,14 @@ rm temp.html
             "help-program SQL")
                    cd HELPER-WEB
                  cd MySqL
-                   start sql-help.html
+                   open sql-help.html
                  cd ..
                cd ..
                 ;;
             "nmap-help")
                 cd HELPER-WEB
                   cd HELPER
-                    start nmap-help.html
+                    open nmap-help.html
                   cd ..
                 cd ..     
                 ;;
