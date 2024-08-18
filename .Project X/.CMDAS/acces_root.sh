@@ -1,66 +1,57 @@
-
-
 #!/bin/bash
 
 # ---------------------- FUNC TO SOLICIT PASSWORD
-
+clear
 allocated_passwd=".root.json"
 
-passwd_solicitude() {
-
-    clear
-     echo "Welcome to PROJECT X, ' Enter your new PASSWD ' AUTH TWO FACTORS"
-     echo ;
-      echo "Dont forget you passwd ;) "
-      echo ;echo "--"
-      echo ;
-    read -p "NEW PASSWD > " passwdnew
-    echo ;
-       cd .pwnrt
-       echo '{"contraseña": "'"$passwdnew"'"}' > "$allocated_passwd"
-       chmod 600 "$allocated_passwd"
-       cd ..
-
+# Hashing function
+hash_password() {
+    echo -n "$1" | sha256sum | awk '{print $1}'
 }
 
- # -------------------- CHECKING PASSWORD
+passwd_solicitude() {
+    clear
+    echo "Welcome to PROJECT X, ' SUDO SU | New Passwd '"
+    echo
+    echo "Don't forget your password ;) "
+    echo
+    echo "--"
+    echo
+    read -sp "NEW PASSWD > " passwdnew
+    echo
+    hashed_passwd=$(hash_password "$passwdnew")
+    echo '{"contraseña": "'"$hashed_passwd"'"}' > "$allocated_passwd"
+    chmod 600 "$allocated_passwd"
+}
+
+# -------------------- CHECKING PASSWORD
 
 if [ ! -f "$allocated_passwd" ]; then
-   passwd_solicitude
-   # FNC
-      echo "Password saved in $allocated_passwd"
-    
-    # END.--
-  else 
-     
-     # ANTH FUNCS
-      
-      echo ;
-      echo "Contraseña existente."
-      echo ;
+    passwd_solicitude
+    echo "Password saved in $allocated_passwd"
+else
+    echo
+    echo "Existing password."
+    echo
 fi
 
-
 autenticar() {
-    echo "AUTH TWO FACTORS"
-    echo ;
+    echo
     read -sp "Introduce tu contraseña: " passwd
     echo ""
 
-    if [ -f "$allocated_passwd" ]; then
-        cat "$allocated_passwd" | grep -q "\"contraseña\": \"$passwd\""
-        if [ $? -eq 0 ]; then
-            echo "¡Contraseña correcta!"
-            # Ejecutar el comando existente aquí
-            echo ;
-            echo "Ejecutando el comando..."
-            
-            sleep 1
+    hashed_passwd=$(hash_password "$passwd")
 
-                     cd ~
-         cd '.Project X'
-         cd ./.CMDAS
-         bash root.sh
+    if [ -f "$allocated_passwd" ]; then
+        if grep -q "\"contraseña\": \"$hashed_passwd\"" "$allocated_passwd"; then
+            echo "¡Contraseña correcta!"
+            echo
+            echo "Ejecutando el comando..."
+            sleep 1
+            cd ~
+            cd '.Project X'
+            cd ./.CMDAS
+            bash root.sh
         else
             echo "Contraseña incorrecta."
             sleep 1

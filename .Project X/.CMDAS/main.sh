@@ -66,6 +66,34 @@ PS1="NotROOT@SYS > "
 
                 ;;
 
+            "!ip")
+
+            ifconfig
+
+                ;;
+
+            "!ipchanger-help")
+
+            echo ;
+            echo "to use ip-changer u need"
+            echo "in your browser modify"
+            echo "Networks setting > Connection Settings > "
+            echo "Manual Proxy Configuration > SOCKS Host > 127.0.0.1"
+            echo "Port > 9050 "
+            echo "Activate SOCKS v5"
+            echo ;
+
+                ;;    
+
+            "!ipchanger-install")
+
+            apt install python3-pip -y
+            apt install tor -y
+
+            pip install tornet -y
+
+                ;;
+
             "!ip6")
 
             ifconfig | grep -w inet6 | awk '{print $2}'
@@ -78,12 +106,12 @@ PS1="NotROOT@SYS > "
                 echo ;echo "Actualizando."
                 echo 
                 cd ~ 
-                  cd 'Project X'
+                  cd '.Project X'
                    cd ./.CMDAS
                     cd ./.Assets
                   bash updater.sh
                    cd ~
-                  cd 'Project X'
+                  cd '.Project X'
                 cd ./.CMDAS  
                 ;;
             "help")
@@ -136,7 +164,7 @@ PS1="NotROOT@SYS > "
             "SQL.HELP")
                cd HELPER-WEB
                  cd MySqL
-                   start sql-help.html
+                   xdg-open sql-help.html
                  cd ..
                cd ..
                 ;;
@@ -255,7 +283,7 @@ rm temp.html
                 ;;
             "help-program GETLINK")
               cd HELPER-WEB
-                open getlink.html
+                xdg-open getlink.html
               cd ..
               cd ~
               cd '.Project X'
@@ -269,14 +297,14 @@ rm temp.html
             "help-program SQL")
                    cd HELPER-WEB
                  cd MySqL
-                   open sql-help.html
+                   xdg-open sql-help.html
                  cd ..
                cd ..
                 ;;
             "nmap-help")
                 cd HELPER-WEB
                   cd HELPER
-                    open nmap-help.html
+                    xdg-open nmap-help.html
                   cd ..
                 cd ..     
                 ;;

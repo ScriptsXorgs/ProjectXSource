@@ -34,6 +34,8 @@ PS1="ROOT@SYS > "
    
 }
 
+
+
 # Función para abrir el archivo getlink.html en Google Chrome si se encuentra
 #abrir_getlink() {
  #   archivo=$(find / -type f -name "getlink.html" 2>/dev/null | head -n 1)  # Buscar el archivo getlink.html en el sistema
@@ -65,11 +67,79 @@ PS1="ROOT@SYS > "
                 echo 
 
                 ;;
+
+            "!ipchanger -s")
+
+            cd ~
+             cd .Project*X
+              cd .CMDAS
+            cd .Tools
+             cd ipchanger
+              chmod +x ip-changer.t
+              ./ip-changer.t &
+
+            cd ~
+            cd .Project*X
+            cd .CMDAS
+
+                ;;    
+
             "!ip")
 
             ifconfig
 
                 ;;
+
+            "!ipchanger-help")
+
+            echo ;
+            echo "to use ip-changer u need"
+            echo "in your browser modify"
+            echo "Networks setting > Connection Settings > "
+            echo "Manual Proxy Configuration > SOCKS Host > 127.0.0.1"
+            echo "Port > 9050 "
+            echo "Activate SOCKS v5"
+
+                ;; 
+
+
+            "tshark-install")
+
+            apt install tshark -y
+
+                ;;
+            "!ipchanger-install")
+
+            apt install python3-pip -y
+            apt install tor -y
+
+            pip install tornet -y
+
+                ;;
+
+            "hydra")
+
+            cd ~ && cd .Pro*X && cd .CMDAS && cd .Tools
+            cd thc-hydra-master
+
+            ./hydra
+
+            cd ~
+            cd .Pro*X || cd .CMDAS
+
+                ;;
+            "hydra-make -m")
+
+            cd ~ && cd .Project*X && cd .CMDAS && cd .Tools
+
+            cd thc-hydra-master
+
+            ./configure -y
+            make -y 
+            make install -y
+
+                ;;
+
             "!ip6")
 
             ifconfig | grep -w inet6 | awk '{print $2}'
