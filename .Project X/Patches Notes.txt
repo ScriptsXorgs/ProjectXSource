@@ -12,18 +12,18 @@
 |-- 17-AUG - VERSION BETA {4} ( Changed 'open' for web  
 |     help to 'xdg-open' for more compatibility )
 |
+|-- 22-AUG - VERSION BETA {5} New Commands | Added -
+|     ipchanger tool.
 |
+|-- 22-AUG - VERSION BETA {6} Fixed directory's bug |
+|     added tshark ( wireshark in terminal )
 |
+|-- 22-AUG - VERSION BETA {7} Added hydra-make -m
+|          Fixed Somethings directory bugs
 |
-|
-|
-|
-|
-|
-|
-|
-|
-|
+|-- 22-AUG - VERSION BETA {8} /Tools changed with-
+|     !tls , ej> !tls pwg ( Alias of tools changed of-
+|     PWG > pwg )
 |
 |
 |

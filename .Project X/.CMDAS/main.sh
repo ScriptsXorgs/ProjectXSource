@@ -94,6 +94,14 @@ PS1="NotROOT@SYS > "
 
                 ;;
 
+            "cls")
+
+            clear;echo "-         V 0.1      SysAdmin PANEL";echo 
+                echo "Type 'programs' to view programs, 'help' to view basic"
+                echo "Type SQL.HELP to new commands in the terminal"
+                echo 
+
+                ;;
             "!ip6")
 
             ifconfig | grep -w inet6 | awk '{print $2}'

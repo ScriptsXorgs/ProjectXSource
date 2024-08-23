@@ -2,7 +2,7 @@
 
 # Mostrar el encabezado del panel
 clear
-echo "-         V 0.1      SysAdmin PANEL (ROOT)";echo 
+echo "-         V 0.1      SysAdmin PANEL (DEV)";echo 
 echo "Type 'programs' to view programs, 'help' to view basic" 
 echo "Type SQL.HELP to new commands in the terminal"
 echo
@@ -15,7 +15,7 @@ echo
 ORIGINAL_PS1="$PS1"
 
 # Modificar PS1 para tener 'SYS >' como indicador
-PS1="ROOT@SYS > "
+PS1="DEVELOPER@SYS > "
 
 # Código a ejecutar dentro del bloque
 {
@@ -24,9 +24,7 @@ PS1="ROOT@SYS > "
    
 
     # Cambiar al directorio de inicio del usuario
-    cd ~
-    mkdir .R-ROOT > /dev/null 2>&1
-    cd ./.R-ROOT
+    
 
     # Ejecutar el comando proporcionado como argumento
     "$@"
@@ -58,16 +56,54 @@ PS1="ROOT@SYS > "
                kill $! > /dev/null 2>&1
                exit
                 ;;
-
             "cls")
 
-            clear;echo "-         V 0.1      SysAdmin PANEL (ROOT)";echo 
+            clear;echo "-         V 0.1      SysAdmin PANEL (DEV)";echo 
                 echo "Type 'programs' to view programs, 'help' to view basic"
                 echo "Type SQL.HELP to new commands in the terminal"
                 echo 
 
                 ;;
 
+            "edit -login-m")
+
+            cd ~
+              cd .Project*X
+            if command -y vim &> /dev/null 2>&1; then
+                 apt install vim -y && clear
+                    vim Main_Login.sh
+              else
+                 vim Main_Login.sh
+            fi
+
+                ;;
+
+            "clear")
+
+            clear;echo "-         V 0.1      SysAdmin PANEL (DEV)";echo 
+                echo "Type 'programs' to view programs, 'help' to view basic"
+                echo "Type SQL.HELP to new commands in the terminal"
+                echo  
+
+            "edit -root")
+
+            cd ~
+              cd .Project*X
+               cd .CMDAS
+             if command -y vim &> /dev/null 2>&1; then
+                  apt install vim -y && clear
+                    vim root.sh
+               else
+                    vim root.sh
+             fi
+
+                ;;
+
+            "System -f")
+
+            cd ~ && cd .Project*X
+                echo ;
+                ;;
             "!ipchanger -s")
 
             cd ~
@@ -138,7 +174,7 @@ PS1="ROOT@SYS > "
             ./hydra
 
             cd ~
-            cd .Pro*X || cd .CMDAS
+            cd .Pro*X && cd .CMDAS
 
                 ;;
             "hydra-make -m")
@@ -229,16 +265,6 @@ PS1="ROOT@SYS > "
                  cd ..
 
                 ;;
-
-            "dev -md -y")
-
-             cd ~ && cd .Project*X
-               cd .CMDAS
-                cd .dev
-              chmod +x auth.sh && chattr +i auth.sh
-                bash auth.sh
-
-                ;;
             "-unsu")
                 cd /.CMDAS
                   bash main.sh
@@ -248,7 +274,7 @@ PS1="ROOT@SYS > "
                     python CML.exe
                 ;;
             "clear")
-                clear;echo "-         V 0.1      SysAdmin PANEL (ROOT)";echo 
+                clear;echo "-         V 0.1      SysAdmin PANEL (DEV)";echo 
                 echo "Type 'programs' to view programs, 'help' to view basic"
                 echo "Type SQL.HELP to new commands in the terminal"
                 echo 
@@ -388,6 +414,13 @@ rm temp.html
                    open sql-help.html
                  cd ..
                cd ..
+                ;;
+
+            "un-dev -y")
+
+            cd  ~ && cd .Project*X
+            cd .CMDAS;bash root.sh
+
                 ;;
             "upgrade -all")
                 echo ;echo "Actualizando."

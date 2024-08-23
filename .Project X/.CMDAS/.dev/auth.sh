@@ -1,10 +1,8 @@
 #!/bin/bash
 
-clear
-
 # ---------------------- FUNC TO SOLICIT PASSWORD
-
-allocated_passwd=".main.json"
+clear
+allocated_passwd=".dev.json"
 
 # Hashing function
 hash_password() {
@@ -13,7 +11,7 @@ hash_password() {
 
 passwd_solicitude() {
     clear
-    echo "Welcome to PROJECT X, ' Enter your new PASSWD '"
+    echo "Welcome to PROJECT X, ' SUDO SU | New Passwd '"
     echo
     echo "Don't forget your password ;) "
     echo
@@ -32,7 +30,6 @@ if [ ! -f "$allocated_passwd" ]; then
     passwd_solicitude
     echo "Password saved in $allocated_passwd"
 else
-clear
     echo
     echo "Existing password."
     echo
@@ -54,7 +51,7 @@ autenticar() {
             cd ~
             cd '.Project X'
             cd ./.CMDAS
-            bash main.sh
+            bash Admin.sh
         else
             echo "Contraseña incorrecta."
             sleep 1
