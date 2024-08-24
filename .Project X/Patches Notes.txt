@@ -9,7 +9,7 @@
 |-- 17-AUG - VERSION BETA {3} ( Bug ' .json not found ' 
 |     in "sudo su" command Fixed )
 |
-|-- 17-AUG - VERSION BETA {4} ( Changed 'open' for web  
+|-- 17-AUG - VERSION BETA {4} ( Changed 'open' for web
 |     help to 'xdg-open' for more compatibility )
 |
 |-- 22-AUG - VERSION BETA {5} New Commands | Added -
