@@ -78,6 +78,11 @@ PS1="DEVELOPER@SYS > "
 
                 ;;
 
+            *)
+
+            echo "Command not found in $userInput"
+
+                ;;
             "clear")
 
             clear;echo "-         V 0.1      SysAdmin PANEL (DEV)";echo 

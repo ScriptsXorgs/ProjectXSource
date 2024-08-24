@@ -25,6 +25,26 @@
 |     !tls , ej> !tls pwg ( Alias of tools changed of-
 |     PWG > pwg )
 |
+|-- 23-AUG - VERSION BETA {9} Added ' cmds -all '
+|     Fixed directory bugs | added more command
+|
+|-- 23-AUG - VERSION BETA {10} Added more compatibility
+|     with Termux / git-bash / WSL
+|
+|-- 23-AUG - VERSION BETA {11} SometimeS System run with docker
+|     Conteiners for more compatibility with others OS
+|
+|-- 24-AUG - VERSION BETA {12} Added error handling system to commands.
+|     Added a docker folders ( Soon some tools will run with docker for accounting and resources )
+|
+|
+|
+|
+|
+|
+|
+|
+|
 |
 |
 |

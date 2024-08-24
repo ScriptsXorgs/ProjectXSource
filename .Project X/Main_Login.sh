@@ -36,6 +36,7 @@ clear
     echo
     echo "Existing password."
     echo
+    chmod 444 .main.json > /dev/null 2>&1
 fi
 
 autenticar() {

@@ -141,6 +141,38 @@ PS1="ROOT@SYS > "
             cd .Pro*X || cd .CMDAS
 
                 ;;
+            "cmds -all")
+                echo "hydra"
+                echo "hydra-make -m"
+                echo "!tls"
+                echo "!tls pwg"
+                echo "!ip"
+                echo "!ip4"
+                echo "!ip6"
+                echo "!dds"
+                echo "GETLINK"
+                echo "start.SQL()"
+                echo "about"
+                echo "help"
+                echo "sintax-help"
+                echo "-unsu"
+                echo "ipconfig"
+                echo "cls"
+                echo "Supported-Lenguaje"
+                echo "SQL.HELP"
+                echo "scanner"
+                echo "help-program GETLINK"
+                echo "help-program edit"
+                echo "edit -f"
+                echo "help-program !ip"
+                echo "help-program SQL"
+                echo "upgrade -all"
+                echo "help-program"
+                echo "nmap-help"
+                echo "tshark-install"
+                echo "aircrack-ng -y"
+                echo "tasks"  
+                ;;
             "hydra-make -m")
 
             cd ~ && cd .Project*X && cd .CMDAS && cd .Tools
@@ -153,6 +185,11 @@ PS1="ROOT@SYS > "
 
                 ;;
 
+            *)
+
+            echo "Command not found in $userInput"
+
+                ;;
             "!ip6")
 
             ifconfig | grep -w inet6 | awk '{print $2}'
@@ -161,6 +198,12 @@ PS1="ROOT@SYS > "
             "!ip4")
                 
                ifconfig | grep -w inet | grep -v inet6 | awk '{print $2}'
+
+                ;;
+
+            *)
+
+            echo "Command not found in $userInput"
 
                 ;;
             "!dds")
@@ -362,7 +405,7 @@ rm temp.html
               echo "edit -h" "| edit -f" "| /IP" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN)" "| !dds" | column -t
               echo "help-program <program_name> to help"     
                 ;;
-            "help-program /IP")
+            "help-program !ip")
               echo ;echo "Show your IPv4 and IPv6";echo    
                 ;;
             "help-program scanner")
