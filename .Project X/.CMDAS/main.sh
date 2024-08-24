@@ -51,9 +51,9 @@ PS1="NotROOT@SYS > "
     #else
      #   echo "Abriendo $archivo en Google Chrome..."
       #  start "$archivo"  # Abrir el archivo en Google Chrome
-    #fi
+    #fi 
 #}
-           
+          
     # Aquí puedes incluir cualquier comando o secuencia de comandos que desees ejecutar
     while true; do
         read -p "$PS1" userInput
@@ -123,7 +123,7 @@ PS1="NotROOT@SYS > "
                 cd ./.CMDAS  
                 ;;
             "help")
-               echo "Type ABOUT from credits."
+               echo "Type about from credits."
                echo 
                echo "Version V 0.1";echo ;
                echo ;echo "'sintax-help' to view te sintax"
@@ -279,7 +279,7 @@ rm temp.html
                 ;;
             "programs")
             $space
-              echo "edit -h" "| edit -f" "| /IP" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN) |" column -t
+              echo "!ghost" "| hydra-make -m" "| !ip" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN)" "| !dds |" "| !ip6 |" "| line --version |" "| tshark-install |" "| tasks |" "| aircrac-ng -y |" "| cls |" "| hydra |" "| !dds |" "| sintax-help |" "| Supported-Lenguaje |" "| !tls |" "| ipconfig |" "| !tls pwg |" "| upgrade -all |" "| nmap-help |" column -t
               echo "help-program <program_name> to help"   
             $space  
                 ;;

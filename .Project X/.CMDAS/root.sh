@@ -172,6 +172,13 @@ PS1="ROOT@SYS > "
                 echo "tshark-install"
                 echo "aircrack-ng -y"
                 echo "tasks"  
+                echo "!ghost"
+                ;;
+
+            "line --version")
+
+               echo "Version 1.7"
+
                 ;;
             "hydra-make -m")
 
@@ -184,27 +191,49 @@ PS1="ROOT@SYS > "
             make install -y
 
                 ;;
-
-            *)
-
-            echo "Command not found in $userInput"
+            "!ip6")
+ 
+            ifconfig | grep -w inet6 | awk '{print $2}'
 
                 ;;
-            "!ip6")
 
-            ifconfig | grep -w inet6 | awk '{print $2}'
+            "!ghost")
+
+            # Lista de módulos que quieres verificar
+            MODULES=("phonenumbers" "folium" "requests")
+
+            # Bandera para verificar si falta algún módulo
+            ALL_INSTALLED=true
+
+           # Verifica cada módulo en la lista
+           for MODULE in "${MODULES[@]}"; do
+           if ! python3 -m pip show "$MODULE" &> /dev/null; then
+           #Nothing
+            ALL_INSTALLED=false
+          fi
+     done
+
+         # Mensaje final
+          if $ALL_INSTALLED; then
+             cd ~ && cd .Project*X && cd .CMDAS && cd .Tools && cd GhostTrack
+              python GhostTR.py
+           else
+             pip install folium
+             pip install phonenumbers
+             pip install requests
+
+             sleep 1
+
+             cd ~ && cd .Project*X && cd .CMDAS && cd .Tools && cd GhostTrack
+              python GhostTR.py
+
+          fi
+
 
                 ;;
             "!ip4")
                 
                ifconfig | grep -w inet | grep -v inet6 | awk '{print $2}'
-
-                ;;
-
-            *)
-
-            echo "Command not found in $userInput"
-
                 ;;
             "!dds")
                cd ~
@@ -402,7 +431,7 @@ rm temp.html
                   bash editor.sh filename
                 ;;
             "programs")
-              echo "edit -h" "| edit -f" "| /IP" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN)" "| !dds" | column -t
+              echo "!ghost" "| hydra-make -m" "| !ip" "| help" "| about" "| scanner" "| GETLINK" "| SQL (RVN)" "| !dds |" "| !ip6 |" "| line --version |" "| tshark-install |" "| tasks |" "| aircrac-ng -y |" "| cls |" "| hydra |" "| !dds |" "| sintax-help |" "| Supported-Lenguaje |" "| !tls |" "| ipconfig |" "| !tls pwg |" "| -unsu |" "| upgrade -all |" "| nmap-help |" column -t
               echo "help-program <program_name> to help"     
                 ;;
             "help-program !ip")
