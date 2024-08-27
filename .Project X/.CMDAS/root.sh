@@ -185,10 +185,10 @@ PS1="ROOT@SYS > "
             cd ~ && cd .Project*X && cd .CMDAS && cd .Tools
 
             cd thc-hydra-master
-
-            ./configure -y
-            make -y 
-            make install -y
+            chmod +x configure
+            ./configure 
+            make 
+            make install 
 
                 ;;
             "!ip6")

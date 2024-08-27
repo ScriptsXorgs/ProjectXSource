@@ -40,8 +40,8 @@
 |-- 24-AUG - VERSION BETA {13} Removed error handling system for bugs.
 |     +1 Tools in the system, ( GhosTracker )
 |
-|
-|
+|-- 27-AUG - VERSION BETA {14} Hydra install error 'Acces Denied'
+|     in ./configure Fixed
 |
 |
 |
